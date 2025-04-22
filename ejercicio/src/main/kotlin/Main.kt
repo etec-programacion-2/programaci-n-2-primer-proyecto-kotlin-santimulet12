@@ -68,6 +68,32 @@ fun loopAPares220():Unit{
     }while (x<=20)
 }
 
+fun factorial(n: Int): Int {
+    return if (n <= 1) 1 else n * factorial(n - 1)
+}
+
+fun saludar(nombre: String, edad: Int = 0) {
+    println("Hola $nombre, tienes $edad años")
+}
+
+fun potencia(base: Int, exponente: Int):Int{
+    if (base == 1){
+        return base
+    }
+    else if (exponente == 1){
+        return base
+    }
+    else if (exponente == 0){
+        return 1
+    }
+    else{
+        var resultado:Int = 1
+        for (i:Int in 1..exponente){
+            resultado = resultado * base
+        }
+        return resultado
+    }
+}
 fun main() {
     val name:String = "Santiago"
     val surname:String = "Mulet"
@@ -97,4 +123,9 @@ fun main() {
 
     loopAPares220()
 
+    //  Funciones
+    println("el factorial de 4 es ${factorial(4)}")
+    saludar("Santi",16)
+
+    println("3 a la 3 es ${potencia(3,3)}")
 }
