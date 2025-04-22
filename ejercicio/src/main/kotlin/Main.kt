@@ -23,6 +23,51 @@ fun positivoNegativoCero(num:Int):String{
     }
 }
 
+fun mostrarNumerosConLoops() {
+    // Usando for
+    println("Usando for:")
+    for (i in 1..10) {
+        println(i)
+    }
+
+    // Usando while
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 10) {
+        println(j)
+        j++
+    }
+
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        println(k)
+        k++
+    } while (k <= 10)
+}
+
+fun loopAPares220():Unit{
+    println("\nUsando for:")
+    for(i:Int in 2..20 step 2){
+        println(i)
+    }
+
+    println("\nUsando while:")
+    var i:Int = 2
+    while (i<=20){
+        println(i)
+        i += 2
+    }
+
+    println("\nUsando do-while:")
+    var x:Int = 2
+    do {
+        println(x)
+        x += 2
+    }while (x<=20)
+}
+
 fun main() {
     val name:String = "Santiago"
     val surname:String = "Mulet"
@@ -46,4 +91,10 @@ fun main() {
     println("el numero 3 es ${parOImpar(3)}")
 
     println("el numero -10 es ${positivoNegativoCero(-10)}")
+
+    //  Loops (Bucles)
+    mostrarNumerosConLoops()
+
+    loopAPares220()
+
 }
