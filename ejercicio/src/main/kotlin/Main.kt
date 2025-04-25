@@ -94,6 +94,61 @@ fun potencia(base: Int, exponente: Int):Int{
         return resultado
     }
 }
+
+fun demostrarAlcanceVariables() {
+    // Variable local en el ámbito de la función
+    val variableGlobal = "Soy global en esta función"
+
+    // Bloque if con su propio ámbito
+    if (true) {
+        val variableIf = "Soy local del if"
+        println("Dentro del if: $variableIf")
+        println("Puedo acceder a: $variableGlobal")
+    }
+
+    // Bloque for con su propio ámbito
+    for (i in 1..3) {
+        val variableFor = "Soy local del for - iteración $i"
+        println("Dentro del for: $variableFor")
+        println("Puedo acceder a: $variableGlobal")
+    }
+
+    // Intentar acceder a variables locales fuera de su ámbito
+    // println(variableIf)  // Esto daría error
+    // println(variableFor) // Esto daría error
+}
+
+fun calcularPromedio(numeros: List<Int>): Double {
+    var suma = 0  // Variable local mutable
+    var contador = 0  // Variable local mutable
+
+    for (numero in numeros) {
+        suma += numero
+        contador++
+    }
+
+    return if (contador > 0) suma.toDouble() / contador else 0.0
+}
+
+fun bigger(numeros: List<Int>){
+    var auxGran: Int = numeros[0]
+    for(numero in numeros){
+       if (numero >= auxGran){
+           auxGran = numero
+       }
+    }
+
+    var auxPeque: Int = numeros[0]
+    for(numero in numeros){
+        if (numero<=auxPeque){
+            auxPeque = numero
+        }
+    }
+    println("El numero mas grande de la lista es: $auxGran")
+    println("El numero mas pequeño de la lista es: $auxPeque")
+
+}
+
 fun main() {
     val name:String = "Santiago"
     val surname:String = "Mulet"
@@ -128,4 +183,13 @@ fun main() {
     saludar("Santi",16)
 
     println("3 a la 3 es ${potencia(3,3)}")
+
+    //  Variables Locales y Alcance
+
+    demostrarAlcanceVariables()
+
+    val myList: List <Int> = listOf(10,5,3,8,9,2)
+    println(calcularPromedio(myList))
+
+    println(bigger(myList))
 }
